@@ -14,7 +14,7 @@ namespace TodoProjet3._1.Models
 
         public static void AjoutUtilisateur(Utilisateur utilisateur)
         {
-            var req = $"INSERT INTO public.user(username, password) VALUES('{utilisateur.Name}','{utilisateur.Password}')";
+            var req = $"INSERT INTO public.user(username, password) VALUES('{utilisateur.Username}','{utilisateur.Password}')";
             try
             {
                 connectionString.Open();
