@@ -24,6 +24,7 @@ namespace TodoProjet3._1.Controllers
         {
             if (DBConnection.VerifierUtilisateur(utilisateur))
             {
+                Session["username"] = utilisateur.Username;
                 return RedirectToRoute("Tache");
             }
             else

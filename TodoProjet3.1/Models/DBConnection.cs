@@ -63,9 +63,9 @@ namespace TodoProjet3._1.Models
             catch (Exception ex) { throw ex; }
         }
 
-        public static List<Tache> retrouverTaches()
+        public static List<Tache> retrouverTaches(string utilisateur)
         {
-            var req = "SELECT * FROM public.todolist ";
+            var req = "SELECT * FROM public.todolist WHERE username = '"+utilisateur+"'";
             var hasTask = new List<Tache>();
 
             try
