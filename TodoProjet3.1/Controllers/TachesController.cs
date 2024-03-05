@@ -21,5 +21,16 @@ namespace TodoProjet3._1.Controllers
             DBConnection.AjoutTache(tache);
             return RedirectToRoute("Tache");
         }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            
+            DBConnection.SupprimerTache(id);
+
+            
+            return RedirectToAction("TaskList");
+        }
+
+
     }
 }
