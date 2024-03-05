@@ -10,9 +10,7 @@ namespace TodoProjet3._1.Models
     public class DBConnection
     {
         public static NpgsqlConnection connectionString =
-             new NpgsqlConnection(
-                 ConfigurationManager.ConnectionStrings["TodoDatabaseConnection"].ConnectionString
-                 );
+           new NpgsqlConnection(ConfigurationManager.ConnectionStrings["TodoDBConnection"].ConnectionString);
 
         public static bool VerifierUtilisateur(Utilisateur utilisateur)
         {
@@ -34,6 +32,23 @@ namespace TodoProjet3._1.Models
             }
 
             return hasUser;
+        }
+
+        public static void AjoutTache(Tache tache)
+        {
+            var req = "INSERT INTO public.todolist ( description , state) VALUES ( '" + tache.Description + "', '" + tache.State + "')";
+
+            try
+            {
+                connectionString.Open();
+                var cmd = new NpgsqlCommand(req, connectionString);
+                cmd.ExecuteNonQuery();
+                connectionString.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
