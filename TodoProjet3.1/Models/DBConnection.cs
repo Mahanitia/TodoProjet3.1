@@ -87,5 +87,22 @@ namespace TodoProjet3._1.Models
 
             return hasTask;
         }
+        public static void SupprimerTache(int idTache)
+        {
+            var req = $"DELETE FROM public.todolist WHERE idtache = {idTache}";
+
+            try
+            {
+                connectionString.Open();
+                var cmd = new NpgsqlCommand(req, connectionString);
+                cmd.ExecuteNonQuery();
+                connectionString.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
