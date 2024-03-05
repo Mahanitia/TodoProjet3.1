@@ -24,7 +24,5 @@ namespace TodoProjet3._1
                 url: "Taches/Task"
             );
         }
-
-        
     }
 }

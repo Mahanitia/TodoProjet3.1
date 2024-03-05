@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,6 +15,11 @@ namespace TodoProjet3._1.Controllers
         {
             return View();
         }
+        public ActionResult Inscription(Utilisateur utilisateur)
+        {
+            DBConnection.AjoutUtilisateur(utilisateur);
+            return Content($"<h1>Tafidtra</h1>");
+        }
         public ActionResult Login(Utilisateur utilisateur)
         {
             if (DBConnection.VerifierUtilisateur(utilisateur))
@@ -25,6 +31,11 @@ namespace TodoProjet3._1.Controllers
                 return RedirectToRoute("Index");
             }
 
+        }
+        // GET: Utilisateur/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
         }
     }
 }
