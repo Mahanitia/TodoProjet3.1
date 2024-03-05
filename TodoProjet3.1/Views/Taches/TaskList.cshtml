@@ -43,11 +43,40 @@
                 @Html.DisplayFor(modelItem => item.Tachename)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-id="@item.id" data-tachename="@item.Tachename" data-state="@item.State">
+                    Edit
+                </button> |
                 @Html.ActionLink("Details", "Details", new { id = item.id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.id })
             </td>
         </tr>
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Task</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="tachename">Tachename</label>
+                                <input type="text" class="form-control" id="tachename" placeholder="Enter Tachename">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" class="form-control" id="state" placeholder="Enter State">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     }
