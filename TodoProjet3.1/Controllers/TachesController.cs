@@ -12,7 +12,7 @@ namespace TodoProjet3._1.Controllers
         [HttpGet]
         public ActionResult TaskList()
         {
-            return View(DBConnection.retrouverTaches());
+            return View(DBConnection.retrouverTaches(Session["username"].ToString()));
         }
 
         [HttpPost]
