@@ -18,11 +18,11 @@ namespace TodoProjet3._1.Controllers
         {
             if (DBConnection.VerifierUtilisateur(utilisateur))
             {
-                return Content($"<h1> Bonjour {utilisateur.Username}</h1>");
+                return RedirectToRoute("Tache");
             }
             else
             {
-                return Content($"<h1> Erreur {utilisateur.Username}</h1>");
+                return RedirectToRoute("Index");
             }
 
         }

@@ -18,6 +18,13 @@ namespace TodoProjet3._1
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Tache",
+                url: "Taches/Task"
+            );
         }
+
+        
     }
 }
