@@ -215,6 +215,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Taches\Task.cshtml" />
     <Content Include="Views\Utilisateur\Index.cshtml" />
+    <Content Include="Views\Taches\TaskList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
