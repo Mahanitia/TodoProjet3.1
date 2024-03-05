@@ -16,7 +16,7 @@ namespace TodoProjet3._1.Models
         {
 
             var req = $"SELECT * FROM public.\"user\" WHERE username ='{utilisateur.Username}' AND \"password\"='{utilisateur.Password}'";
-            var hasUser = false;
+            var hasUser = false ;
 
             try
             {
@@ -44,10 +44,6 @@ namespace TodoProjet3._1.Models
                 var cmd = new NpgsqlCommand(req, connectionString);
                 cmd.ExecuteNonQuery();
                 connectionString.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
             catch (Exception ex) { throw ex; }
         }

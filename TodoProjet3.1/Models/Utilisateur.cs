@@ -23,7 +23,6 @@ namespace TodoProjet3._1.Models
             _username = name;
             _password = password;
         }
-        public Utilisateur() { }
 
         public int Idname { get => _idname; set => _idname = value; }
         public string Username { get => _username; set => _username = value; }
