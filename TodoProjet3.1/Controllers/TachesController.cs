@@ -24,10 +24,7 @@ namespace TodoProjet3._1.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            
             DBConnection.SupprimerTache(id);
-
-            
             return RedirectToAction("TaskList");
         }
 
