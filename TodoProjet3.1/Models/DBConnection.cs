@@ -54,7 +54,7 @@ namespace TodoProjet3._1.Models
 
         public static List<Tache> retrouverTaches()
         {
-            var req = "SELECT * FROM public.user ";
+            var req = "SELECT * FROM public.todolist ";
             var hasTask = new List<Tache>();
 
             try

@@ -19,7 +19,7 @@ namespace TodoProjet3._1.Controllers
         public ActionResult Add(Tache tache)
         {
             DBConnection.AjoutTache(tache);
-            return RedirectToAction("Task");
+            return RedirectToRoute("Tache");
         }
     }
 }
