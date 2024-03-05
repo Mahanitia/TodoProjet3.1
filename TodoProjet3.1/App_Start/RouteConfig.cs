@@ -23,6 +23,11 @@ namespace TodoProjet3._1
                 name: "Tache",
                 url: "Taches/TaskList"
             );
+
+            routes.MapRoute(
+                name: "Accueil",
+                url: "Utilisateur/Index"
+            );
         }
     }
 }

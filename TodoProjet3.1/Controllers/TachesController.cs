@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebPages;
 using TodoProjet3._1.Models;
 
 namespace TodoProjet3._1.Controllers
@@ -12,7 +13,15 @@ namespace TodoProjet3._1.Controllers
         [HttpGet]
         public ActionResult TaskList()
         {
-            return View(DBConnection.retrouverTaches(Session["username"].ToString()));
+            if (Session["username"] == null)
+            {
+                return RedirectToRoute("Accueil");
+            }
+            else
+            {
+                return View(DBConnection.retrouverTaches(Session["username"].ToString()));
+            }
+            
         }
 
         [HttpPost]
