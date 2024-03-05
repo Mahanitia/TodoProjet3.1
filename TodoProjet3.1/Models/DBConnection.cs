@@ -47,6 +47,7 @@ namespace TodoProjet3._1.Models
             }
             catch (Exception ex) { throw ex; }
         }
+
         public static void AjoutUtilisateur(Utilisateur utilisateur)
         {
             var req = $"INSERT INTO public.user(username, password) VALUES('{utilisateur.Username}','{utilisateur.Password}')";
