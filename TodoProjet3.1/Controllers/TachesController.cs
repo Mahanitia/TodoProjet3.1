@@ -10,16 +10,16 @@ namespace TodoProjet3._1.Controllers
     public class TachesController : Controller
     {
         [HttpGet]
-        public ActionResult Task()
+        public ActionResult TaskList()
         {
-            return View();
+            return View(DBConnection.retrouverTaches());
         }
 
         [HttpPost]
         public ActionResult Add(Tache tache)
         {
             DBConnection.AjoutTache(tache);
-            return RedirectToAction("Task");
+            return RedirectToRoute("Tache");
         }
     }
 }
