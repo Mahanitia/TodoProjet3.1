@@ -18,7 +18,7 @@ namespace TodoProjet3._1.Controllers
         public ActionResult Inscription(Utilisateur utilisateur)
         {
             DBConnection.AjoutUtilisateur(utilisateur);
-            return Content($"<h1>Tafidtra</h1>");
+            return RedirectToAction("Index");
         }
         public ActionResult Login(Utilisateur utilisateur)
         {
