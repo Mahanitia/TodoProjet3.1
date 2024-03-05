@@ -7,28 +7,26 @@ namespace TodoProjet3._1.Models
 {
     public class Utilisateur
     {
+        private int _idname;
         private string _username;
         private string _password;
 
-
-        public string Password
+        public Utilisateur(string name, string password)
         {
-            get { return _password; }
-            set { _password = value; }
+            _username = name;
+            _password = password;
         }
-
-        public string Username
+        public Utilisateur() { }
+        public Utilisateur(int idname, string name, string password)
         {
-            get { return _username; }
-            set { _username = value; }
-        }
-
-        public Utilisateur(string username, string password)
-        {
-            _username = username;
+            _idname = idname;
+            _username = name;
             _password = password;
         }
         public Utilisateur() { }
 
+        public int Idname { get => _idname; set => _idname = value; }
+        public string Username { get => _username; set => _username = value; }
+        public string Password { get => _password; set => _password = value; }
     }
 }

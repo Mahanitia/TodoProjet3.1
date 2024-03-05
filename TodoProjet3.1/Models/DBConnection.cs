@@ -49,6 +49,20 @@ namespace TodoProjet3._1.Models
             {
                 throw ex;
             }
+            catch (Exception ex) { throw ex; }
+        }
+        public static void AjoutUtilisateur(Utilisateur utilisateur)
+        {
+            var req = $"INSERT INTO public.user(username, password) VALUES('{utilisateur.Username}','{utilisateur.Password}')";
+            try
+            {
+                connectionString.Open();
+                var cmd = new NpgsqlCommand(req, connectionString);
+                cmd.ExecuteNonQuery();
+                connectionString.Close();
+
+            }
+            catch (Exception ex) { throw ex; }
         }
     }
 }
