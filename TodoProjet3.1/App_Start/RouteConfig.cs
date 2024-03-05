@@ -23,6 +23,10 @@ namespace TodoProjet3._1
                 name: "Tache",
                 url: "Taches/Task"
             );
+            routes.MapRoute(
+                name: "Tache",
+                url: "Taches/Task"
+            );
         }
     }
 }
