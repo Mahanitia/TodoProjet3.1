@@ -25,8 +25,9 @@ namespace TodoProjet3._1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(Tache tache)
-        {
+        public ActionResult Add(FormCollection form)
+        { 
+            var tache = new Tache(Session["username"].ToString(), form["tachenom"], form["state"]==null?false:true);
             DBConnection.AjoutTache(tache);
             return RedirectToRoute("Tache");
         }

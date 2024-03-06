@@ -26,7 +26,7 @@ namespace TodoProjet3._1.Models
         }
 
 
-        public string Tachename
+        public string Username
         {  
             get { return _username; }
             set { _username = value; }

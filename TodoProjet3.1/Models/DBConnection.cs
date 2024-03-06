@@ -37,7 +37,7 @@ namespace TodoProjet3._1.Models
 
         public static void AjoutTache(Tache tache)
         {
-            var req = "INSERT INTO public.todolist ( description , state) VALUES ( '" + tache.Description + "', '" + tache.State + "')";
+            var req = "INSERT INTO public.todolist ( description, username , state) VALUES ( '" + tache.Description + "','" + tache.Username + "', '" + tache.State + "')";
 
             try
             {
