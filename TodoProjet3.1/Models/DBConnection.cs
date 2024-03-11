@@ -65,7 +65,7 @@ namespace TodoProjet3._1.Models
 
         public static List<Tache> RetrouverTaches(string utilisateur)
         {
-            var req = "SELECT * FROM public.todolist WHERE username = '"+utilisateur+"'";
+            var req = "SELECT * FROM public.todolist WHERE username = '"+utilisateur + "' ORDER BY idtache";
             var hasTask = new List<Tache>();
 
             try
