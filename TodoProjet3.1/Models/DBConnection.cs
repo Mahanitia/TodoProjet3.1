@@ -63,7 +63,7 @@ namespace TodoProjet3._1.Models
             catch (Exception ex) { throw ex; }
         }
 
-        public static List<Tache> retrouverTaches(string utilisateur)
+        public static List<Tache> RetrouverTaches(string utilisateur)
         {
             var req = "SELECT * FROM public.todolist WHERE username = '"+utilisateur+"'";
             var hasTask = new List<Tache>();
@@ -75,7 +75,7 @@ namespace TodoProjet3._1.Models
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    var Task = new Tache(reader.GetInt32(0), reader["description"].ToString(), reader["username"].ToString(), reader.GetBoolean(3));
+                    var Task = new Tache(reader.GetInt32(0), reader["username"].ToString(), reader["description"].ToString(), reader.GetBoolean(3));
                     hasTask.Add(Task);
                 }
                 connectionString.Close();
@@ -104,5 +104,21 @@ namespace TodoProjet3._1.Models
             }
         }
 
+        public static void ModifierTache(int idTache , Tache tache)
+        {
+            var req = "UPDATE public.todolist SET description= '"+tache.Description+"' , state= '"+tache.State+"'  WHERE idtache = '" + idTache+"'";
+
+            try
+            {
+                connectionString.Open();
+                var cmd = new NpgsqlCommand(req, connectionString);
+                cmd.ExecuteNonQuery();
+                connectionString.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

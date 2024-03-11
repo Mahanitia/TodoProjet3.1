@@ -35,5 +35,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('.edit-button').click(function () {
+                //var idTache = $(this).data('id-tache');
+                //$('#editModal input[  name="idTache"]').val(idTache);
+                console.log($('.edit-button').attr('id'))
+            });
+        });
+    </script>
 </body>
 </html>
